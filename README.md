@@ -6,6 +6,42 @@ The application under test is a web-based management dashboard. It has a login p
 
 ---
 
+## Challenge Submission
+
+This project is the QA Automation challenge submission. It was completed within the expected 3–4 labour day window.
+
+---
+
+## Framework Choice
+
+The challenge suggested **WebdriverIO with Cucumber** but left room to justify a different choice. This project uses **Playwright** with **playwright-bdd**, which bridges Gherkin/Cucumber feature files directly to Playwright's test runner.
+
+Reasons for this choice:
+
+- Playwright has native TypeScript support with no extra configuration, and its auto-waiting model eliminates most flakiness that requires manual waits in WebdriverIO
+- `playwright-bdd` preserves the full BDD/Gherkin workflow (Given/When/Then, feature files, step definitions) that Cucumber brings, so the readable, stakeholder-friendly format is not lost
+- Playwright's built-in parallelism, trace viewer, video recording, and HTML reporter are production-ready out of the box, reducing the tooling overhead
+- The Page Object Model integrates cleanly with Playwright's `Locator` API, keeping test code concise and maintainable
+
+The result is a Cucumber-style BDD framework with Playwright's reliability and tooling, which is strictly more capable than a WebdriverIO/Cucumber stack for this scope.
+
+---
+
+## Scenario Selection Rationale
+
+The challenge required automating **at least two scenarios**. Four were implemented, covering the highest-risk and most representative user flows:
+
+| Scenario | Why it was chosen |
+|---|---|
+| **Complete User Journey** | End-to-end smoke test: login → dashboard → add product → update profile → logout. If this passes, the core application flow works. |
+| **Authentication Validation** | Login is the entry point to every other page. Invalid credential handling and session persistence are critical security and UX concerns. |
+| **Product Management** | The products page is the most interactive page, combining form submission, search, and deletion. High surface area for regressions. |
+| **Profile Password Management** | Password change has multiple validation states (mismatch, too short, success). These edge cases are easy to miss manually and benefit most from automation. |
+
+These four scenarios together cover every page of the application and every major user action, while remaining fast enough to run as part of a CI pipeline.
+
+---
+
 ## Requirements
 
 Before running anything, make sure you have these installed:
