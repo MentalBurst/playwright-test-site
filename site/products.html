@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Test Application</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">TestApp</div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html" data-testid="nav-dashboard">Dashboard</a></li>
+                <li><a href="products.html" class="active" data-testid="nav-products">Products</a></li>
+                <li><a href="profile.html" data-testid="nav-profile">Profile</a></li>
+                <li><a href="#" id="logoutBtn" data-testid="nav-logout">Logout</a></li>
+            </ul>
+            <div class="user-info">
+                <span id="userDisplay" data-testid="user-display"></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="page-header">
+            <h1>Products</h1>
+            <button class="btn btn-primary" id="addProductBtn" data-testid="add-product-button">
+                + Add Product
+            </button>
+        </div>
+
+        <div class="search-bar">
+            <input
+                type="text"
+                id="searchInput"
+                data-testid="search-input"
+                placeholder="Search products..."
+                class="search-input"
+            >
+        </div>
+
+        <div class="products-grid" id="productsGrid" data-testid="products-grid">
+            <!-- Products will be loaded dynamically -->
+        </div>
+
+        <!-- Add Product Modal -->
+        <div id="addProductModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Add New Product</h2>
+                    <button class="modal-close" data-testid="modal-close">&times;</button>
+                </div>
+                <form id="addProductForm">
+                    <div class="form-group">
+                        <label for="productName">Product Name</label>
+                        <input
+                            type="text"
+                            id="productName"
+                            data-testid="product-name-input"
+                            placeholder="Enter product name"
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="productPrice">Price</label>
+                        <input
+                            type="number"
+                            id="productPrice"
+                            data-testid="product-price-input"
+                            placeholder="0.00"
+                            step="0.01"
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="productCategory">Category</label>
+                        <select id="productCategory" data-testid="product-category-select" required>
+                            <option value="">Select category</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="books">Books</option>
+                            <option value="food">Food</option>
+                        </select>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-secondary" id="cancelBtn" data-testid="cancel-button">
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn btn-primary" data-testid="save-product-button">
+                            Save Product
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>
+

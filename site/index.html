@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Test Application</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-card">
+            <div class="logo">
+                <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                    <circle cx="30" cy="30" r="28" stroke="#667eea" stroke-width="3"/>
+                    <path d="M30 15 L30 35 M20 30 L40 30" stroke="#667eea" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <h1>Welcome Back</h1>
+            <p class="subtitle">Please login to continue</p>
+
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        data-testid="username-input"
+                        placeholder="Enter your username"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        data-testid="password-input"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label>
+                        <input type="checkbox" id="rememberMe" data-testid="remember-checkbox">
+                        <span>Remember me</span>
+                    </label>
+                </div>
+
+                <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+                <button type="submit" class="btn btn-primary" data-testid="login-button">
+                    Login
+                </button>
+            </form>
+
+            <div class="footer-links">
+                <a href="#" data-testid="forgot-password-link">Forgot password?</a>
+                <span>·</span>
+                <a href="#" data-testid="signup-link">Sign up</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
+

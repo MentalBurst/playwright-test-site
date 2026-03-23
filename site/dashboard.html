@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Test Application</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">TestApp</div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html" class="active" data-testid="nav-dashboard">Dashboard</a></li>
+                <li><a href="products.html" data-testid="nav-products">Products</a></li>
+                <li><a href="profile.html" data-testid="nav-profile">Profile</a></li>
+                <li><a href="#" id="logoutBtn" data-testid="nav-logout">Logout</a></li>
+            </ul>
+            <div class="user-info">
+                <span id="userDisplay" data-testid="user-display"></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="page-header">
+            <h1>Dashboard</h1>
+            <p>Welcome to your dashboard</p>
+        </div>
+
+        <div class="cards-grid">
+            <div class="stat-card">
+                <div class="stat-icon blue">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke-width="2"/>
+                        <circle cx="9" cy="7" r="4" stroke-width="2"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="stat-content">
+                    <h3>Total Users</h3>
+                    <p class="stat-number" data-testid="total-users">1,234</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon green">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="stat-content">
+                    <h3>Revenue</h3>
+                    <p class="stat-number" data-testid="total-revenue">$45,678</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon purple">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2" stroke-width="2"/>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="stat-content">
+                    <h3>Products</h3>
+                    <p class="stat-number" data-testid="total-products">89</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon orange">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="stat-content">
+                    <h3>Activity</h3>
+                    <p class="stat-number" data-testid="total-activity">567</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Recent Activity</h2>
+            <div class="activity-list" data-testid="activity-list">
+                <div class="activity-item">
+                    <span class="activity-icon">✓</span>
+                    <div class="activity-content">
+                        <p class="activity-title">New user registered</p>
+                        <p class="activity-time">2 minutes ago</p>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-icon">📦</span>
+                    <div class="activity-content">
+                        <p class="activity-title">Product added to inventory</p>
+                        <p class="activity-time">15 minutes ago</p>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-icon">💰</span>
+                    <div class="activity-content">
+                        <p class="activity-title">Payment received</p>
+                        <p class="activity-time">1 hour ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/common.js"></script>
+</body>
+</html>
+

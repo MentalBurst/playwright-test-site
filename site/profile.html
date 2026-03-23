@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Test Application</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">TestApp</div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html" data-testid="nav-dashboard">Dashboard</a></li>
+                <li><a href="products.html" data-testid="nav-products">Products</a></li>
+                <li><a href="profile.html" class="active" data-testid="nav-profile">Profile</a></li>
+                <li><a href="#" id="logoutBtn" data-testid="nav-logout">Logout</a></li>
+            </ul>
+            <div class="user-info">
+                <span id="userDisplay" data-testid="user-display"></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="page-header">
+            <h1>Profile Settings</h1>
+            <p>Manage your account information</p>
+        </div>
+
+        <div class="profile-container">
+            <div class="profile-card">
+                <h2>Personal Information</h2>
+                <form id="profileForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input
+                            type="text"
+                            id="fullName"
+                            data-testid="fullname-input"
+                            placeholder="Enter your full name"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            data-testid="email-input"
+                            placeholder="your.email@example.com"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            data-testid="phone-input"
+                            placeholder="+1 (555) 123-4567"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bio">Bio</label>
+                        <textarea
+                            id="bio"
+                            data-testid="bio-input"
+                            rows="4"
+                            placeholder="Tell us about yourself..."
+                        ></textarea>
+                    </div>
+
+                    <div id="successMessage" class="success-message" style="display: none;">
+                        Profile updated successfully!
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" data-testid="save-profile-button">
+                        Save Changes
+                    </button>
+                </form>
+            </div>
+
+            <div class="profile-card">
+                <h2>Change Password</h2>
+                <form id="passwordForm">
+                    <div class="form-group">
+                        <label for="currentPassword">Current Password</label>
+                        <input
+                            type="password"
+                            id="currentPassword"
+                            data-testid="current-password-input"
+                            placeholder="Enter current password"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newPassword">New Password</label>
+                        <input
+                            type="password"
+                            id="newPassword"
+                            data-testid="new-password-input"
+                            placeholder="Enter new password"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm New Password</label>
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            data-testid="confirm-password-input"
+                            placeholder="Confirm new password"
+                        >
+                    </div>
+
+                    <div id="passwordError" class="error-message" style="display: none;"></div>
+                    <div id="passwordSuccess" class="success-message" style="display: none;">
+                        Password changed successfully!
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" data-testid="change-password-button">
+                        Change Password
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>
+
